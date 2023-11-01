@@ -14,6 +14,7 @@
   --tt-placeholder: #49505780;
   --tt-button: #ffffff;
   --bg-button: #02799d;
+  --bg-button-hover: #02536c;
   --bg-body: #040924;
   --bg-error: #f03e3e;
   --bg-card: #ffffff;
@@ -21,9 +22,14 @@
 }
 
 body {
-  font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
   background: var(--bg-body);
+}
+
+body,
+input,
+button {
+  font-size: 1.6rem;
 }
 
 #container {
@@ -42,6 +48,10 @@ body {
 .title {
   font-size: 3.2rem;
   color: var(--tt-heading);
+}
+
+form {
+  min-width: 30rem;
 }
 
 form h1 {
@@ -74,4 +84,25 @@ input::placeholder {
 .input-wrapper + .input-wrapper {
   /*ler da direita para esquerda*/
   margin-top: 1.6rem;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin-top: 3.2rem;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  color: var(--tt-button);
+  background: var(--bg-button);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--bg-button-hover);
 }
