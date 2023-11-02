@@ -27,3 +27,6 @@ frm.onsubmit = (event) => {
   Modal.message.innerText = message;
   Modal.open();
 };
+
+inWeigth.oninput = () => AlertError.close();
+inHeigth.oninput = () => AlertError.close();
