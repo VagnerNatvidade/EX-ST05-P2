@@ -10,6 +10,13 @@ frm.onsubmit = (event) => {
   const weight = inWeigth.value;
   const height = inHeigth.value;
 
+  const showAlertError = notANumber(weight) || notANumber(height);
+
+  if (showAlertError) {
+    console.log("aaaaa");
+    return;
+  }
+
   const result = IMC(weight, height);
   const message = `Seu IMC é de ${result}`;
 
@@ -21,10 +28,6 @@ const IMC = (weight, height) => {
   return (weight / (height / 100) ** 2).toFixed(2);
 };
 
-const handleKeydown = (event) => {
-  if (event.key === "Escape") {
-    Modal.close();
-  }
+const notANumber = (value) => {
+  return isNaN(value) || value == "";
 };
-
-window.addEventListener("keydown", handleKeydown);

@@ -16,3 +16,11 @@ Modal.btnClose.onclick = () => {
   weight.value = "";
   height.value = "";
 };
+
+const handleKeydown = (event) => {
+  if (event.key === "Escape") {
+    Modal.close();
+  }
+};
+
+window.addEventListener("keydown", handleKeydown);
