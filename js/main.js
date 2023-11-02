@@ -1,19 +1,8 @@
+import { Modal } from "./modal";
+
 const frm = document.getElementById("form");
 const inWeigth = document.querySelector("#weight");
 const inHeigth = document.querySelector("#height");
-
-const Modal = {
-  wrapper: document.querySelector(".modal-wrapper"),
-  message: document.querySelector("h2.title"),
-  btnClose: document.getElementById("close"),
-
-  open() {
-    Modal.wrapper.classList.add("open");
-  },
-  close() {
-    Modal.wrapper.classList.remove("open");
-  },
-};
 
 frm.onsubmit = (event) => {
   event.preventDefault();
@@ -25,13 +14,7 @@ frm.onsubmit = (event) => {
   const message = `Seu IMC é de ${result}`;
 
   Modal.message.innerText = message;
-  Modal.open();
-};
-
-Modal.btnClose.onclick = () => {
-  Modal.close();
-  weight.value = "";
-  height.value = "";
+  Modal.open(); 
 };
 
 const IMC = (weight, height) => {
